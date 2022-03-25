@@ -42,19 +42,14 @@ for i in range(1, len(sys.argv)-1):
         header = next(rows)
         for rw in rows:
             key_set_size = len(key_set)
-            print()
             if len(rw) == 6:
                 key_set.add((rw[1], rw[3], rw[4], rw[5].upper()))
-                print(str((rw[1], rw[3], rw[4], rw[5].upper())))
-                print( key_set )
                 if len(key_set) > key_set_size:
                     export_data.add( (rw[0], rw[1], rw[2], rw[3], rw[4], rw[5].upper() ))
             else:
                 rw3_upper = rw[3].upper()
                 rw3, rw4 = rw3_upper.split('/')[0], rw3_upper.split('/')[1]
                 key_set.add((rw[0], rw[2], rw3, rw4))
-                print(str( (rw[0],  rw[2], rw3, rw4) ))
-                print(key_set)
                 if len(key_set) > key_set_size:
                     export_data.add( (rw[0], rw[1], rw[2], rw3, rw4) )
 
