@@ -54,6 +54,9 @@ with open_file(mode='w', arg_pos=-1) as fw:
     for my_row in export_data:
         if my_row.row_type == 1:
             ex1 = my_row
+            break
+    for my_row in export_data:
+        if my_row.row_type == 1:
             writer.writerow(my_row.row_data)
         else:
             new_data = [''] * len(ex1.row_data)
